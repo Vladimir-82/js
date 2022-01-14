@@ -22,8 +22,7 @@ m = int(input())
 
 matrix = [[int(i) for i in input().split()] for _ in range(n)]
 
-k = int(input())
-v = int(input())
+k, v = int(input().split()[0]), int(input().split()[1])
 
 for i in range(n):
     for j in range(m):
