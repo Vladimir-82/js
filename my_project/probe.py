@@ -31,25 +31,40 @@ from random import randint
 # func(int(input()))
 
 
-def func():
-    field = [8 * ['.'] for _ in range(8)]
-    row = {1: 7, 2: 6, 3: 5, 4: 4, 5: 3, 6: 2, 7: 1, 8: 0}
-    col = {'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, 'f': 5, 'g': 6, 'h': 7}
-    horse = input()
-    field[row[int(horse[1])]][col[horse[0]]] = 'N'
+def func(n):
+    matrix = [[int(i) for i in input().split()] for _ in range(n)]
+    summ = sum(matrix[0])
+    allnum = []
+    summ_gd = []
+    summ_vd = []
+    for i in range(n):
+        summ_col = []
+        sum_row = []
+        for j in range(n):
+            allnum.append(matrix[i][j])
+            summ_col.append(matrix[j][i])
+            sum_row.append(matrix[i][j])
 
-    for i in [-2, 2]:
-        for j in [-1, 1]:
-            if 0 <= row[int(horse[1]) + i] <= 7 or 0 <= col[horse[0]] + j <= 7:
-                field[row[int(horse[1]) + i]][col[horse[0]]+j] = '*'
-    # for i in [-1, 1]:
-    #     for j in [-2, 2]:
-    #         if 0 <= row[int(horse[1]) + i] <= 7 or 0 <= col[horse[0]] + j <= 7:
-    #             field[row[int(horse[1]) + i]][col[horse[0]]+j] = '*'
+            if i == j:
+                summ_gd.append(matrix[i][j])
+
+            if i + j + 1 == n:
+                summ_vd.append(matrix[i][j])
+
+        if sum(sum_row) != summ:
+            return 'NO'
+        if sum(summ_col) != summ:
+            return 'NO'
+    if sorted(allnum) != list(range(1, n**2 + 1)):
+        return 'NO'
+    if sum(summ_gd) != summ:
+        return 'NO'
+    if sum(summ_vd) != summ:
+        return 'NO'
 
 
-    for i in field:
-        print(*i)
+    return 'YES'
 
 
-func()
+n = int(input())
+print(func(n))
