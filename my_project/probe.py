@@ -1,6 +1,5 @@
 from random import randint
 
-
 # n = int(input())
 # [print(*[input() for i in range(m)]) for i in range(n)]
 
@@ -29,42 +28,47 @@ from random import randint
 #         print(*i)
 #
 # func(int(input()))
+# import numpy as np
+# n = int(input())
+# mat1 = [[int(i) for i in input().split()] for _ in range(n)]
+# m = int(input())
+#
+#
+# res = np.linalg.matrix_power(mat1, m)
+# for i in range(n):
+#     for j in range(n):
+#         print(res[i][j], end=' ')
+#     print()
+
+# string = input().split()
+# n = int(input())
+# res = []
+# for i in range(n):
+#     res.append(string[i::n])
+# print(res)
 
 
-def func(n):
-    matrix = [[int(i) for i in input().split()] for _ in range(n)]
-    summ = sum(matrix[0])
-    allnum = []
-    summ_gd = []
-    summ_vd = []
-    for i in range(n):
-        summ_col = []
-        sum_row = []
-        for j in range(n):
-            allnum.append(matrix[i][j])
-            summ_col.append(matrix[j][i])
-            sum_row.append(matrix[i][j])
+# ферзь
+# value = input()
+# x, y = value[0], value[1]
+# slovarx = {'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, 'f': 5, 'g': 6, 'h': 7}
+# slovary = {'8': 0, '7': 1, '6': 2, '5': 3, '4': 4, '3': 5, '2': 6, '1': 7}
+#
+# x, y = slovarx[x], slovary[y]
+# matrix = [['.'] * 8 for _ in range(8)]
+#
+# for x1 in slovarx.values():
+#     for y1 in slovary.values():
+#         if x1 == x or y1 == y:
+#             matrix[y1][x1] = '*'
+#
+# for x1 in slovarx.values():
+#     for y1 in slovary.values():
+#         if abs(x - x1) == abs(y - y1):
+#             matrix[y1][x1] = '*'
+#
+# matrix[y][x] = 'Q'
+#
+# for i in matrix:
+#     print(*i)
 
-            if i == j:
-                summ_gd.append(matrix[i][j])
-
-            if i + j + 1 == n:
-                summ_vd.append(matrix[i][j])
-
-        if sum(sum_row) != summ:
-            return 'NO'
-        if sum(summ_col) != summ:
-            return 'NO'
-    if sorted(allnum) != list(range(1, n**2 + 1)):
-        return 'NO'
-    if sum(summ_gd) != summ:
-        return 'NO'
-    if sum(summ_vd) != summ:
-        return 'NO'
-
-
-    return 'YES'
-
-
-n = int(input())
-print(func(n))
