@@ -1,4 +1,5 @@
 from random import randint
+
 # n = int(input())
 # [print(*[input() for i in range(m)]) for i in range(n)]
 
@@ -35,23 +36,17 @@ from random import randint
 # for i in matrix:
 #     print(*i)
 
+n = int(input())
+m = int(input())
 
-# n, m = map(int, input().split())
-# row = list(range(1, m + 1))
-# for _ in range(n):
-#     print(*row)
-#     x = row.pop(0)
-#     row.append(x)
+matrix = [[int(i) for i in input().split()] for _ in range(n)]
 
-# n, m = map(int, input().split())
-# matrix = [[0] * m for i in range(n)]
-# print(matrix)
-# print(matrix * 2)
+k, v = int(input().split()[0]), int(input().split()[1])
 
+for i in range(n):
+    for j in range(m):
+        if j == k:
+            matrix[i][k], matrix[i][v] = matrix[i][v], matrix[i][k]
+print(matrix)
 
-def func(**kwargs):
-    for i in kwargs:
-        print(kwargs[i])
-
-func(a = 2, b = 3, c = 4)
 
