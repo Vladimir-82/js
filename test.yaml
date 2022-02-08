@@ -1,0 +1,11 @@
+integer: 25
+hex: 0x12d4 #равно 4820
+octal: 023332 #равно 9946
+float: 25.0
+exponent: 12.3015e+05 #равно 1230150.0
+boolean: Yes
+string: "25"
+infinity: .inf # преобразуется в бесконечность
+neginf: -.Inf #преобразуется в минус бесконечность
+not: .NAN #Not a Number
+null: ~

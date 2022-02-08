@@ -43,9 +43,15 @@ from random import randint
 #     x = row.pop(0)
 #     row.append(x)
 
-n, m = map(int, input().split())
-matrix = [[0] * m for i in range(n)]
-print(matrix)
-print(matrix * 2)
+# n, m = map(int, input().split())
+# matrix = [[0] * m for i in range(n)]
+# print(matrix)
+# print(matrix * 2)
 
+
+def func(**kwargs):
+    for i in kwargs:
+        print(kwargs[i])
+
+func(a = 2, b = 3, c = 4)
 
