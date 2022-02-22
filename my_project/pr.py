@@ -116,11 +116,134 @@
 
 
 
-student_ids = ['S001', 'S002', 'S003', 'S004', 'S005', 'S006', 'S007', 'S008', 'S009', 'S010', 'S011', 'S012', 'S013']
-student_names = ['Camila Rodriguez', 'Juan Cruz', 'Dan Richards', 'Sam Boyle', 'Batista Cesare', 'Francesco Totti', 'Khalid Hussain', 'Ethan Hawke', 'David Bowman', 'James Milner', 'Michael Owen', 'Gary Oldman', 'Tom Hardy']
-student_grades = [86, 98, 89, 92, 45, 67, 89, 90, 100, 98, 10, 96, 93]
-
-result = [{student_ids[k]: {student_names[k]: student_grades[k]}} for k in range(len(student_ids))]
-print(result)
+# student_ids = ['S001', 'S002', 'S003', 'S004', 'S005', 'S006', 'S007', 'S008', 'S009', 'S010', 'S011', 'S012', 'S013']
+# student_names = ['Camila Rodriguez', 'Juan Cruz', 'Dan Richards', 'Sam Boyle', 'Batista Cesare', 'Francesco Totti', 'Khalid Hussain', 'Ethan Hawke', 'David Bowman', 'James Milner', 'Michael Owen', 'Gary Oldman', 'Tom Hardy']
+# student_grades = [86, 98, 89, 92, 45, 67, 89, 90, 100, 98, 10, 96, 93]
+#
+# result = [{student_ids[k]: {student_names[k]: student_grades[k]}} for k in range(len(student_ids))]
+# print(result)
 
 # [{'S001': {'Camila Rodriguez': 86}}, {'S002': {'Juan Cruz': 98}},...]
+
+
+emails = {'nosu.edu': ['timyr', 'joseph', 'svetlana.gaeva', 'larisa.mamuk'],
+          'gmail.com': ['ruslan.chaika', 'rustam.mini', 'stepik-best'],
+          'msu.edu': ['apple.fruit', 'beegeek', 'beegeek.school'],
+          'yandex.ru': ['surface', 'google'],
+          'hse.edu': ['tomas-henders', 'cream.soda', 'zivert'],
+          'mail.ru': ['angel.down', 'joanne', 'the.fame.moster']}
+
+# em = []
+# for k, v in emails.items():
+#     for i in v:
+#         em.append(i + '@' + k)
+# em.sort()
+# for i in em:
+#     print(i)
+
+
+# s = input().split()
+#
+# res = []
+# out = []
+# result = {}
+# for k in s:
+#     result[k] = result.get(k, 0) + 1
+#     if result.get(k, 0) == 1:
+#         out.append(1)
+#     else:
+#         out.append(str(result[k]))
+#
+#
+# print(*out)
+
+# d = {'A': 1, 'E': 1, 'I': 1, 'L': 1, 'N': 1, 'O': 1, 'R': 1, 'S': 1, 'T': 1, 'U': 1, 'D': 2, 'G': 2, 'B': 3, 'C': 3, 'M': 3, 'P': 3, 'F': 4, 'H': 4, 'V': 4, 'W': 4, 'Y': 4, 'K': 5, 'J': 8, 'X': 8, 'Q': 10, 'Z': 10}
+#
+# s = input()
+# res = 0
+# for i in s:
+#     for k, v in d.items():
+#         if i == k:
+#             res += v
+# print(res)
+
+# def build_query_string(params):
+#     res = []
+#     for k, v in params.items():
+#         res.append(str(k) + '=' + str(v))
+#     return '@'.join(sorted(res))
+#
+#
+# print(build_query_string({'sport': 'hockey', 'game': 2, 'time': 17}))
+
+
+# def merge(values):      # values - это список словарей
+#     res = {}
+#     for i in values:
+#         for k, v in i.items():
+#             res.setdefault(k, set()).add(v)
+#     print(res)
+#     s = {k: set(sorted(list(v))) for k, v in res.items()}
+#
+#     return s
+
+
+# print(merge([{'a': 1, 'b': 2}, {'b': 10, 'c': 100}, {'a': 1, 'b': 17, 'c': 50}, {'a': 5, 'd': 777}]))
+
+# n = int(input())
+#
+# ds = {}
+# for i in range(n):
+#     s = input().split()
+#     ds.setdefault(s[0], [*s[1:]])
+#
+# df = []
+# m = int(input())
+#
+# for i in range(m):
+#     f = input().split()
+#     if f[0] == 'execute':
+#         df.append((f[1], 'X'))
+#     else:
+#         df.append((f[1], f[0][0].upper()))
+#
+# for i in df:
+#     for k, v in ds.items():
+#         if i[0] == k and i[1] in v:
+#             print('OK')
+#             break
+#
+#     else:
+#         print('Access denied')
+
+
+
+
+n = int(input())
+
+res = {}
+for i in range(n):
+    s = input().split()
+    res.setdefault(s[0], {}).setdefault(s[1], []).append(int(s[2]))
+
+for k, v in sorted(res.items()):
+    print(k + ':')
+    for m, n in sorted(v.items()):
+
+        print(m, sum(n))
+
+
+
+# 7
+# Вячеслав Ручка 1
+# Филипп Ручка 1
+# Виктория Перо 3
+# Вячеслав Линейка 4
+# Виктория Тетрадь 7
+# Вячеслав Ручка 29
+# Филипп Циркуль 1
+
+
+
+
+
