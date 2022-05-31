@@ -1,7 +1,5 @@
-b = 20
-a = 20
-a1 = 16.0
-b1 = 18.0
+def divisible_count(x,y,k):
+    return len(list(filter(lambda x: not x % k, list(range(x, y + 1)))))
+    # return len([i for i in range(x, y + 1) if not i % k])
 
-W = (b * a ** 3 - b1 * a1 ** 3) / (6 * a)
-print(W)
+print(divisible_count(6, 11, 2))
