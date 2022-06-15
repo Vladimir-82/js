@@ -1,6 +1,5 @@
-# Get the Middle Character
-def get_middle(s):
-    return s[len(s)//2-1:len(s)//2 + 1] if not len(s) % 2 else s[len(s)//2]
+def sequence_sum(begin_number, end_number, step):
+    return sum(range(begin_number, end_number + 1, step)) if begin_number <= end_number else 0
 
 
-print(get_middle('test'))
+print(sequence_sum(2, 2, 1))
