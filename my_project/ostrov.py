@@ -1,13 +1,14 @@
-from operator import add
-from functools import reduce
+def get_the_vowels(word):
+    word = [w for w in word if w in 'aeiou']
+    res = []
+    counter = 0
+    for i in range(len(word) - 1):
+        if word[i] < word[i + 1]:
+            counter += 1
+        else:
+            res.append(counter)
+            counter = 0
+    return max(res)
 
-
-
-
-def divisible_count(x, y, k):
-    # return len(list(filter(lambda x: not x % k, tuple(range(x, y + 1, k)))))
-    # return sum([1 for i in range(x, y + 1) if not i % k])
-    # return reduce(add, [1 for i in range(x, y + 1) if not i % k], 0)
-
-
-print(divisible_count(6, 11, 2))
+string = "agrtertyfikfmroyrntbvsukldkfa"
+print(get_the_vowels(string))
