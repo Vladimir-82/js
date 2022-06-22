@@ -1,4 +1,5 @@
 def get_the_vowels(word):
+    # Consecutive Vowels in a String
     word = [w for w in word if w in 'aeiou']
     res = []
     counter = 0
