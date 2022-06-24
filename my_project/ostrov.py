@@ -1,15 +1,11 @@
-def get_the_vowels(word):
-    # Consecutive Vowels in a String
-    word = [w for w in word if w in 'aeiou']
-    res = []
-    counter = 0
-    for i in range(len(word) - 1):
-        if word[i] < word[i + 1]:
-            counter += 1
-        else:
-            res.append(counter)
-            counter = 0
-    return max(res)
+def is_hollow(x):
+    # Hollow array
+    if 0 in x and x[0] != 0 and x[-1] != 0:
+        ind = x.index(0)
+        if not all(x[ind:-ind]) and x[ind:-ind].count(0) > 2 and len(x[ind:-ind]) == x[ind:-ind].count(0):
+            return True
 
-string = "agrtertyfikfmroyrntbvsukldkfa"
-print(get_the_vowels(string))
+    return False
+
+
+print(is_hollow([-1,0,0,0,0]))
