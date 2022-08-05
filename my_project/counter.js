@@ -1,6 +1,6 @@
 jQuery('document').ready(function(){
     jQuery('button').on('click', function(){    //jQuery('input').on('keyup', function() - меняет значение life
-//        alert('Вы нажали кнопку!!');
+       alert('Вы нажали кнопку!!');
 
         var value1, value2, value3, res;
         value1 = parseInt(jQuery('#val1').val());  //parseInt() переводит из str в int
