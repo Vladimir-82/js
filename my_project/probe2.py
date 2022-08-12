@@ -1,25 +1,15 @@
-import string
+def meeting(s):
+    res = []
+    splt = s.split(';')
+    print(splt)
+    for el in splt:
+        res.append((el.split(':')[::-1]))
+    print(res)
+
+    return sorted(res, key=len)
+
+s = "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"
+print(meeting(s))
 
 
-S = string.ascii_lowercase
-DC = dict(zip(list(S), list(range(1, len(S) + 1))))
-
-def high(x):
-    DC.values()
-    dc = {}
-    lst = x.split()
-    for word in lst:
-        for letter in word:
-            dc[word] = dc.get(word, 0) + DC[letter]
-    print(dc)
-    maximum = max(dc.values())
-    for k, v in dc.items():
-        if v == maximum:
-            return k
-
-
-
-    # max(map(lambda y: reduce(add, y, 0), x.split()))
-    # res = map(lambda y: reduce(add, y, 0), x.split())
-
-print(high('what time are we climbing up the volcano'))
+# "(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)"
