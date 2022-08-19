@@ -1,5 +1,8 @@
-f = open('test.txt', 'r')
+def counter(lst: list):
 
-res = f.read()
+    res = 1
+    for i in lst:
+        res *= i ** 5000
+    return len(str(res))
 
-print(res)
+print(counter(30))

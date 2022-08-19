@@ -30,3 +30,11 @@ https://github.com/Vladimir-82/ImagesAlbum
 Спасибо.
 
 I am the best!!!!!!
+
+
+
+Здравствуйте, Жанна! Я начинающий Python-developer. Ищу команду разработчиков.
+https://github.com/Vladimir-82/link.
+Деплой: https://sleepy-springs-44233.herokuapp.com/
+И много других.
+Django, SQL, Docker, Celery, Redis. Может быть, Вы или Ваши коллеги в поиске кандидата? Спасибо.
