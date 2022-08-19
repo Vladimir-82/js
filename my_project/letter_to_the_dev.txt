@@ -28,3 +28,5 @@ https://github.com/Vladimir-82/ImagesAlbum
 Использованы Celery, Redis, Docker.
 - Документацию DRF.
 Спасибо.
+
+I am the best!!!!!!
