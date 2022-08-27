@@ -1,8 +1,6 @@
-def counter(lst: list):
+def solution(a, b):
+    res = sorted([a, b], key=len)
+    return ''.join((res[0], res[1], res[0]))
 
-    res = 1
-    for i in lst:
-        res *= i ** 5000
-    return len(str(res))
 
-print(counter(30))
+print(solution('45', '1'))
