@@ -50,8 +50,6 @@ https://github.com/Vladimir-82/weather
 
 Спасибо.
 
-I am the best!!!!!!
-
 
 
 Здравствуйте, Жанна! Я начинающий Python-developer. Ищу команду разработчиков.
@@ -60,3 +58,42 @@ https://github.com/Vladimir-82/link.
 И много других.
 Django, SQL, Docker, Celery, Redis. Может быть, Вы или Ваши коллеги в поиске
 кандидата? Спасибо.
+
+
+
+About myself I can say that I'm hardworking, responsible, organized and can by
+useful in a team of colleagues. I started as a regular worker and now I'm
+already a lead.
+Definitely I'm detail-oriented person and I don't have any bad habits. I mean
+I don't smoke and I'm not big fan of alcohol. And I'm never late for work.
+Moreover, if the work requires I can work extra hours or even on weekends.
+
+I actually think my English could use some improvement. In the past my fear of
+communicating in English has prevented me from talking active part in meetings.
+But now I feel more confident. I've been attencling English classes for three
+months.
+
+What about my weaknesses? I think I'm a team player. And it will be difficult
+for me to work without the support of coworkers. And I wil never refuse to help
+them.
+I can rely on my team. I believe I can learn from the team and
+I'm sure that I can teach.
+
+
+
+Пра сябе магу сказаць, што я працавіты, адказны, арганізаваны і працаздольны
+карысна ў камандзе калег. Я пачынаў як звычайны рабочы, а зараз я вядучы інжынер.
+Безумоўна, я чалавек уважлівы і не маю шкодных звычак. я маю на ўвазе
+Я не палю і не вялікі прыхільнік алкаголю. І я ніколі не спазняюся на працу.
+Акрамя таго, калі праца патрабуе, я магу працаваць дадатковыя гадзіны або нават у выхадныя.
+
+Я на самой справе думаю, што маю англійскую мову можна палепшыць. У мінулым мой страх
+зносіны на англійскай мове перашкаджала мне актыўна размаўляць у сустрэчах.
+Але цяпер адчуваю сябе больш упэўнена. Я наведваю заняткі па англійскай мове ўжо тры
+месяцы.
+
+Што з маімі слабасцямі? Я думаю, што я камандны гулец. І гэта будзе цяжка
+каб я працаваў без падтрымкі калег. І ніколі не адмоўлю ў дапамозе
+ім.
+Я хачу спадзявацца на сваю каманду. Я лічу, што магу павучыцца ў каманды і
+Я ўпэўнены, што магу навучыць.
