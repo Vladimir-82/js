@@ -1,8 +1,12 @@
-"Baby shark lyrics generator"
+def sqInRect(lng, wdth):
+    res = []
+    if lng == wdth:
+        return None
+    massive = [lng, wdth]
+    while massive.count(massive[0]) != len(massive):
+        var = sorted(massive)
+        res.append(var[0])
+        massive = [var[0], var[1] - var[0]]
+    return res + res[-1:]
 
-NAMES = ['Baby', 'Mommy', 'Daddy', 'Grandma', 'Grandpa', "Let's go hunt"]
-def baby_shark_lyrics():
-    print(*map(lambda x: 3 * (x + ' shark,' + 6 * ' doo' + '\n') + x + ' shark!\n'.strip(), NAMES))
-    print('Run away,…')
-
-baby_shark_lyrics()
+print(sqInRect(37, 14))
