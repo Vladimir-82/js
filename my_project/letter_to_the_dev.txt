@@ -50,6 +50,9 @@ https://github.com/Vladimir-82/link
 https://github.com/Vladimir-82/LanguageIdentifier
 Деплой: https://language-uladzimir.herokuapp.com/
 
+Сервис написан с использованием bootstrap и jQuery.
+С использованием библиотеки langdetect.
+
 5. Сервис для изменения размера и формата изображения. Написан на Django.
 Пользователь загружает изображение на сервер. В форму вводит имя, размеры в
 пикселях и формат изображения на выходе. Измененное изображение
