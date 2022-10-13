@@ -1,8 +1,6 @@
 Здравствуйте!
 Меня зовут Владимир и я нахожусь в поиске команды разработчиков для успешной
 работы.
-Изучаю язык программирования Python, Django уже более года самостоятельно и
-не только.
 Мои работы:
 
 1. Сервис для мониторинга погоды. Написан на Django.
@@ -49,6 +47,8 @@ https://github.com/Vladimir-82/link
 
 https://github.com/Vladimir-82/LanguageIdentifier
 Деплой: https://language-uladzimir.herokuapp.com/
+(К сожелению бесплатный heroku не поддерживает django media files
+Распознанный текс можно прослушать)
 
 Сервис написан с использованием bootstrap и jQuery.
 С использованием библиотеки langdetect.
