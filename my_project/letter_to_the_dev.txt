@@ -47,8 +47,7 @@ https://github.com/Vladimir-82/link
 
 https://github.com/Vladimir-82/LanguageIdentifier
 Деплой: https://language-uladzimir.herokuapp.com/
-(К сожелению бесплатный heroku не поддерживает django media files
-Распознанный текс можно прослушать)
+Распознанный текс можно прослушать, но не на бесплатной heroku
 
 Сервис написан с использованием bootstrap и jQuery.
 С использованием библиотеки langdetect.
