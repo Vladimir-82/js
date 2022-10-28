@@ -49,7 +49,7 @@ https://github.com/Vladimir-82/LanguageIdentifier
 Деплой: https://language-uladzimir.herokuapp.com/
 Распознанный текс можно прослушать, но не на бесплатной heroku
 Сервис написан с использованием bootstrap и jQuery.
-С использованием библиотеки langdetect.
+С использованием библиотеки langdetect, googletrans, gTTS.
 
 5. Сервис для изменения размера и формата изображения. Написан на Django.
 Пользователь загружает изображение на сервер. В форму вводит имя, размеры в
