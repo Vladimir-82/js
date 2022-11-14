@@ -169,3 +169,65 @@ I'm sure that I can teach.
 ім.
 Я хачу спадзявацца на сваю каманду. Я лічу, што магу павучыцца ў каманды і
 Я ўпэўнены, што магу навучыць.
+
+Dear Haily Bedaña
+
+I am writing in response to your message in linkedin.
+I'm interested in your post. I have experience in developing applications in django and python,
+knowledge in SQL, PostgreSQL, CSS, jQuery, Git, Docker. English level - B1.
+My last projects:
+1. Weather monitoring service. Written in Django.
+https://github.com/Vladimir-82/weather
+Deploy: https://weather-vld.herokuapp.com/
+After registration, the user enters the personal account. There are functions
+adding and removing cities.
+The code implements a relationship between Many to Many tables.
+
+2. Photo album on Django and DRF.
+https://github.com/Vladimir-82/ImagesAlbum
+Service includes:
+- Mandatory registration and authorization before use, work on a token.
+- Security - Users can only edit or delete their own posts.
+- All pages, except the main one, are for registered users only.
+- When requesting the main page, photos from the album is returned reduced
+copy - 150 pixels on the larger side.
+- When a detailed view is requested, the view counter of this
+photos on 1 and you can view photos in the format and size of the download,
+- API methods - authorization, registration, create photos with a title,
+change the name of the photos,
+get a list of photos, get a specific photo.
+- Once a day notification of the user that his photo is in the top 3 most
+viewed. Notifications come by email
+Used Celery, Redis, Docker.
+- Notify the user about the entry or exit from the top 3 most
+viewed immediately. Notifications come by email
+- DRF documentation.
+
+3. Service for shortening links.
+https://github.com/Vladimir-82/link
+Deploy: https://sleepy-springs-44233.herokuapp.com/
+Written with django.
+The service includes 4 pages:
+- User registration page.
+-Page of authorization of users.
+-Page to shorten links.
+The service is written using bootstrap and jQuery.
+
+4. Text language recognition service.
+
+https://github.com/Vladimir-82/LanguageIdentifier
+Deploy: https://language-uladzimir.herokuapp.com/
+Recognized text can be listened to, but not on free heroku
+The service is written using bootstrap and jQuery.
+Using the langdetect, googletrans, gTTS libraries.
+
+That sort of sings.
+
+I would be grateful if you could send me further details of your vacancies for
+hire. I am available for interview at any time.
+
+I look forward to hearing from you.
+
+Yours faithfully
+
+Vladimir Kustukevich

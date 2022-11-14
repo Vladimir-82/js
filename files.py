@@ -1,5 +1,3 @@
-
-
 import time
 def time_track(func):
     def surogate(*args):
@@ -9,6 +7,7 @@ def time_track(func):
         print(f'функция отработала - {stop - start} сек')
         return res
     return surogate
+
 
 @time_track
 def counter(*args):

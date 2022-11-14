@@ -10,8 +10,7 @@ lst2 = [1, 88, 3, 6, 7]
 
 gen = my_generator(lst1, lst2)
 for i, j, res in gen:
-    print(i, j, res)
     if res == 36:
-        print('found')
+        print(i, j, res)
         break
 print(next(gen))
