@@ -172,6 +172,9 @@ I'm sure that I can teach.
 
 Dear Haily Bedaña
 
+
+
+
 I am writing in response to your message in linkedin.
 I'm interested in your post. I have experience in developing applications in django and python,
 knowledge in SQL, PostgreSQL, CSS, jQuery, Git, Docker. English level - B1.
