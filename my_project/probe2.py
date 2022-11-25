@@ -1,12 +1,8 @@
-class Dog:
-    def __init__(self, name='initname', typ='inityp'):
-        self.name = name
-        self.typ = typ
+from fractions import Fraction
+from functools import reduce
+from math import factorial as f
+
+a = int(input())
 
 
-    def __str__(self):
-        return f'{self.name, self.typ}'
-
-isinst = Dog(name='ist_name', typ='ins_type')
-
-print(isinst)
+print(reduce(lambda x, y: x + y, map(lambda z: Fraction(1, f(z)), [*range(1, a + 1)])))
