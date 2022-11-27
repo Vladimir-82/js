@@ -1,8 +1,11 @@
 from fractions import Fraction
-from functools import reduce
-from math import factorial as f
 
-a = int(input())
+n = 10
+z = n // 2
 
-
-print(reduce(lambda x, y: x + y, map(lambda z: Fraction(1, f(z)), [*range(1, a + 1)])))
+while True:
+    if str(Fraction(z, (n - z))) == ''.join((str(z), '/', str(n - z))):
+        print(Fraction(z, (n - z)))
+        break
+    else:
+        z -= 1
