@@ -1,11 +1,11 @@
-from fractions import Fraction
+from regex import findall as f
 
-n = 10
-z = n // 2
 
-while True:
-    if str(Fraction(z, (n - z))) == ''.join((str(z), '/', str(n - z))):
-        print(Fraction(z, (n - z)))
-        break
-    else:
-        z -= 1
+s = 'Peter: (313) 555-1234'
+
+# reg = r'(\(\d{3}\)|\d{3}) (0|-)(\d{3}-\d{4})'
+reg = r'(\([2-9]\d{2}\)|[2-9]\d{2})'
+
+result = f(reg, s)
+
+[print(i) for i in result]
