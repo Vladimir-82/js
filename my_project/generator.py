@@ -14,8 +14,3 @@ for i, j, res in gen:
         print(i, j, res)
         break
 print(next(gen))
-
-print(dir(gen))
-
-
-
