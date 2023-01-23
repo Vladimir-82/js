@@ -1,11 +1,22 @@
-from regex import findall as f
+from re import findall as f
+from functools import reduce
+
+# 1. Сначала вывести все bee
+#
+# 2. Затем все beegeek
+#
+# 3. Затем все beegeekgeek
+#
+# 4. Затем все beegeekbeegeek
 
 
-s = 'Peter: (313) 555-1234'
+s = 'Correct name is beegeekgeek'
 
-# reg = r'(\(\d{3}\)|\d{3}) (0|-)(\d{3}-\d{4})'
-reg = r'(\([2-9]\d{2}\)|[2-9]\d{2})'
 
-result = f(reg, s)
+regex = r'((bee)(geek){1,}){1,}'
 
-[print(i) for i in result]
+result = f(regex, s)
+
+print(result)
+
+
