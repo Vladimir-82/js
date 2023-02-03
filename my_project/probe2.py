@@ -1,14 +1,33 @@
 import re
-import sys
 
-regex = r'((https*://)*([a-z\.]+\.[a-z]+/?))">(.*[a-zA-Z]+.*)</a>'
-string = '<li class="tier-2 element-3" role="treeitem"><a href="https://wiki.python.org/moin/BeginnersGuide">Beginner&#39;s Guide</a></li><li class="tier-2 element-4" role="treeitem"><a href="https://devguide.python.org/">Developer&#39;s Guide</a></li><li class="tier-2 element-5" role="treeitem"><a href="https://docs.python.org/faq/">FAQ</a></li><li class="tier-2 element-6" role="treeitem"><a href="http://wiki.python.org/moin/Languages">Non-English Docs</a></li><li class="tier-2 element-7" role="treeitem"><a href="http://python.org/dev/peps/">PEP Index</a></li><li class="tier-2 element-8" role="treeitem"><a href="https://wiki.python.org/moin/PythonBooks">Python Books</a></li>'
+string = 'hi, hi, hi, hello, hello, HELLO, HELLO, HELLO, HELLO, hello!'
 
 
-result = re.finditer(regex, string)
+def func(obj):
+    print(obj.group(1))
+    print(obj.group(2))
+    if obj.group(1) == obj.group(2):
+        return obj.group(1)
 
-for i in result:
-    print(', '.join((i.group(1), i.group(4))), re.MULTILINE)
+
+
+while True:
+    regex = r'(\w+)[^\w]?\s?(\w+)'
+    match = re.search(regex, string)
+    if match:
+        string = re.sub(regex, func, string)
+    else:
+        print(string)
+        break
+
+
+string = re.sub(regex, func, string)
+
+
+
+
+
+
 
 
 
