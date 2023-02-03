@@ -46,9 +46,6 @@ https://github.com/Vladimir-82/blog
 Сервис написан с использованием bootstrap и jQuery.
 
 
-
-
-
 4. Калькулятор
 https://github.com/Vladimir-82/calc
 Деплой: https://calc-uladzimir.herokuapp.com/

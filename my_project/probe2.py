@@ -1,30 +1,25 @@
 import re
 
-string = 'hi, hi, hi, hello, hello, HELLO, HELLO, HELLO, HELLO, hello!'
+string = 'beegeek,beegeek,beegeek! python python.. Python.. stepik?stepik?stepik'
 
 
 def func(obj):
-    print(obj.group(1))
-    print(obj.group(2))
     if obj.group(1) == obj.group(2):
         return obj.group(1)
 
 
 
+regex = r'\b(\w+)\b[^\w]?[\s]?\b(\1)\b'
+
+
 while True:
-    regex = r'(\w+)[^\w]?\s?(\w+)'
+
     match = re.search(regex, string)
+    print(match)
     if match:
-        string = re.sub(regex, func, string)
-    else:
-        print(string)
-        break
+        string = re.sub(regex, r'\2', string)
 
-
-string = re.sub(regex, func, string)
-
-
-
+    print(string)
 
 
 
