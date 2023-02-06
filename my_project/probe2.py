@@ -1,25 +1,18 @@
 import re
 
-string = 'beegeek,beegeek,beegeek! python python.. Python.. stepik?stepik?stepik'
+def func(poses, string):
+    pos, endpos = int(poses.split()[0]), int(poses.split()[1])
+    regex_obj = re.compile(r'\d+')
+    result = list(regex_obj.findall(string, pos=pos, endpos=endpos))
+    return sum([int(i) for i in result])
 
 
-def func(obj):
-    if obj.group(1) == obj.group(2):
-        return obj.group(1)
 
+poses = input()
+string = input()
 
+print(func(poses=poses, string=string))
 
-regex = r'\b(\w+)\b[^\w]?[\s]?\b(\1)\b'
-
-
-while True:
-
-    match = re.search(regex, string)
-    print(match)
-    if match:
-        string = re.sub(regex, r'\2', string)
-
-    print(string)
 
 
 
