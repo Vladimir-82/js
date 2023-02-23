@@ -13,19 +13,25 @@ for j in range(new_numbers):
     new_name = input()
 
     for name in current_members_list:
-        match = re.search(new_name, name)
+        regex = '(' + name + ')' + '(\d*)'
+        print(regex)
+        match = re.match(regex, name)
         if match:
+            print(match.group(1))
 
-            n = 0
-            while True:
-                if re.fullmatch(new_name, name):
-                    n += 1
-                    new_name = new_name + str(n)
-                else:
+            # while True:
+            #     if re.fullmatch(new_name, name):
+            #         n += 1
+            #         new_name = new_name + str(n)
+            #     else:
+            #
+            #         current_members_list = [new_name] + current_members_list
+            #         print(new_name + '@beegeek.bzz')
+            #         break
 
-                    current_members_list.append(new_name)
-                    print(new_name + '@beegeek.bzz')
-                    break
+
+
+# timyr-guev2@beegeek.bzz
 
 
 
