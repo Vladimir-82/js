@@ -1,16 +1,35 @@
 from datetime import date
 
+def is_correct(day, mounth, year):
+    try:
+       date.fromisoformat(f'{year}-{mounth}-{day}')
+    except:
+        return 'Некорректная'
+    return 'Корректная'
 
-def saturdays_between_two_dates(start: date, end: date):
+counter = 0
+while True:
+    try:
+        day, mounth, year = input().split('.')
+        check = is_correct(day=day, mounth=mounth, year=year)
+        print(check)
+        if check == 'Корректная':
+            counter += 1
+    except:
+        print(counter)
+        break
 
-    dates = [start, end]
-    d1, d2 = min(dates).toordinal(), max(dates).toordinal()
-    return len(list(filter(lambda x: date.fromordinal(x).weekday() == 5, range(d1, d2 + 1))))
 
 
-date1 = date(2021, 11, 1)
-date2 = date(2021, 11, 22)
-print(saturdays_between_two_dates(date1, date2))
+
+# 19.05.2016
+# 05.13.2010
+# 21.12.2012
+# 01.01.1000
+# 32.04.2003
+# end
+
+
 
 
 
