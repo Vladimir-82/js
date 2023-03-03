@@ -1,7 +1,13 @@
 from datetime import datetime
 
-text = 'Уважаемый пациент, доктор готов принять Вас 15.07.2022 в 08:30'
+with open('diary.txt', 'r', encoding='utf-8') as file:
+    context = file.readlines()
 
-dt = datetime.strptime(text, 'Уважаемый пациент, доктор готов принять Вас %d.%m.%Y в %H:%M')
+    new_content = {}
+    for string in context:
 
-print(dt)
+        if string.strip() == '':
+            continue
+        else:
+            print(string.strip())
+
