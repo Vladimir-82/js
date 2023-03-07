@@ -1,24 +1,17 @@
-from datetime import date, timedelta
+from datetime import datetime, timedelta
 
 
-def num_of_sundays(y):
-    date1 = date(year=y, month=1, day=1)
-    print(date1)
-    sundays = 0
-    while True:
-        if date1.year == y + 1:
+pattern = '%H:%M'
+start, stop = datetime.strptime(input(), pattern), datetime.strptime(input(), pattern)
+
+
+while True:
+    if stop > start:
+        lesson = start + timedelta(minutes=45)
+        if stop < lesson:
             break
-        if date1.weekday() == 0:
-            sundays += 1
-        date1 = date1 + timedelta(days=1)
+        print(f'{start.strftime(pattern)} - {lesson.strftime(pattern)}')
+        start += timedelta(minutes=55)
 
-    return sundays
-
-
-
-
-
-
-print(num_of_sundays(768))
-
-
+    else:
+        break
