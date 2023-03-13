@@ -1,22 +1,41 @@
 from datetime import datetime
 
-pattern = '%d.%m.%Y'
-number = int(input())
-dates = {}
-
-for member in range(number):
-    first_name, second_name, day = input().split()
-    dates[datetime.strptime(day, pattern).toordinal()] = \
-        dates.get(datetime.strptime(day, pattern).toordinal(), 0) + 1
-
-maximum = max([v for k, v in dates.items()])
-[print(datetime.fromordinal(k).strftime(pattern), sep='\n') for k, v in sorted(dates.items()) if v == maximum]
+pattern = '%d.%m.%Y %H:%M'
+suffixes = {
+        1: 0, 2: 1, 3: 1, 4: 1, 5: 2, 6: 2, 7: 2, 8: 2, 9: 2, 10: 2,
+        11: 2, 12: 2, 13: 2, 14: 2, 0: 2,
+    }
 
 
+def choose_plural(amount, declensions):
+
+    ind = suffixes.get(int(str(amount)[-2:]))
+    if ind != None:
+        return f'{amount} {declensions[ind]}'
+    return f'{amount} {declensions[suffixes.get(int(str(amount)[-1]))]}'
 
 
 
-# if len(oldests) == 1:
-#     [print(datetime.fromordinal(v).strftime(pattern), k) for k, v in dates.items() if v == oldest]
-# else:
-#     print(datetime.fromordinal(oldest).strftime(pattern), len(oldests))
+release = datetime(year=2022, month=11, day=8, hour=12)
+current_day = datetime.strptime(input(), pattern)
+
+if current_day >= release:
+    print('Курс уже вышел!')
+else:
+    rem = release - current_day
+    tot = rem.total_seconds()
+    if rem.days == 0:
+
+        if not rem.total_seconds() < 3600:
+            print(f'До выхода курса осталось: {tot * 60} {choose_plural({tot * 60, }')
+
+        elif not (rem.total_seconds()) % 60:
+            print(f'До выхода курса осталось: {tot // 3600} часов')
+        else:
+            print(f'До выхода курса осталось: {tot // 3600} часов и {(tot % 3600) // 60} минут')
+
+    else:
+        if not (rem.total_seconds()) % 3600:
+            print(f'До выхода курса осталось: {rem.days} дней')
+        else:
+            print(f'До выхода курса осталось: {rem.days} дней и {(tot // 3600) % 24} часов')
