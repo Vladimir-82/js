@@ -6,6 +6,10 @@ suffixes = {
         11: 2, 12: 2, 13: 2, 14: 2, 0: 2,
     }
 
+MINUTE = ('минута', 'минуты', 'минут')
+HOUR = ('час', 'часа', 'часов')
+DAY = ('день', 'дня', 'дней')
+
 
 def choose_plural(amount, declensions):
 
@@ -13,8 +17,6 @@ def choose_plural(amount, declensions):
     if ind != None:
         return f'{amount} {declensions[ind]}'
     return f'{amount} {declensions[suffixes.get(int(str(amount)[-1]))]}'
-
-
 
 release = datetime(year=2022, month=11, day=8, hour=12)
 current_day = datetime.strptime(input(), pattern)
@@ -25,17 +27,20 @@ else:
     rem = release - current_day
     tot = rem.total_seconds()
     if rem.days == 0:
-
-        if not rem.total_seconds() < 3600:
-            print(f'До выхода курса осталось: {tot * 60} {choose_plural({tot * 60, }')
-
-        elif not (rem.total_seconds()) % 60:
-            print(f'До выхода курса осталось: {tot // 3600} часов')
+        if rem.total_seconds() < 3600:
+            print(f'До выхода курса осталось: {choose_plural(int(tot // 60), MINUTE)}')
         else:
-            print(f'До выхода курса осталось: {tot // 3600} часов и {(tot % 3600) // 60} минут')
-
+            if tot // 60 % 60:
+                print(f'До выхода курса осталось: {choose_plural(int(tot // 3600), HOUR)} и {choose_plural(int(tot // 60 % 60), MINUTE)}')
+            else:
+                print(
+                    f'До выхода курса осталось: {choose_plural(int(tot // 3600), HOUR)}')
     else:
-        if not (rem.total_seconds()) % 3600:
-            print(f'До выхода курса осталось: {rem.days} дней')
+        if tot // 3600 % 24:
+            print(f'До выхода курса осталось: {choose_plural(rem.days, DAY)} и {choose_plural(int(tot // 3600 % 24), HOUR)}')
         else:
-            print(f'До выхода курса осталось: {rem.days} дней и {(tot // 3600) % 24} часов')
+            print(f'До выхода курса осталось: {choose_plural(rem.days, DAY)}')
+
+
+
+
