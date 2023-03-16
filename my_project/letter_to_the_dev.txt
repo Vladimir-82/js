@@ -46,6 +46,9 @@ https://github.com/Vladimir-82/blog
 - Система Friends (Following - Followers).
 В система коммертариев реализована связь one to many и one to one.
 Сервис написан с использованием bootstrap и jQuery.
+- Чат для общения между юзерами.
+Чат только для зарегистрированных пользователей.
+Написан при помощи Channels, daphne и Redis.
 
 
 4. Калькулятор
