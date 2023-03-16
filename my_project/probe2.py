@@ -1,7 +1,10 @@
 import calendar
 import datetime
 
-dt = datetime.datetime.strptime(input(), '%Y %m')
-year, month = dt.year, dt.month
+def get_days_in_month(year, month):
 
-print(calendar.monthrange(year=year, month=month)[1])
+    dt = datetime.datetime.strptime(str(year)+str(list(calendar.month_name).index(month)), '%Y%m')
+    print(dt)
+
+
+print(get_days_in_month(2021, 'December'))
