@@ -1,10 +1,19 @@
 import calendar
 import datetime
 
-def get_days_in_month(year, month):
 
-    dt = datetime.datetime.strptime(str(year)+str(list(calendar.month_name).index(month)), '%Y%m')
-    print(dt)
+def get_all_days(year):
+    res = []
+    for m in range(1, 13):
+        c = calendar.monthcalendar(year, m)
+        for week in c:
+            if week[3]:
+                res.append(datetime.date(day=week[3]+14, month=m, year=year).strftime("%d.%m.%Y"))
+                break
+    return res
 
 
-print(get_days_in_month(2021, 'December'))
+
+
+
+print(*get_all_days(int(input())), sep='\n')
