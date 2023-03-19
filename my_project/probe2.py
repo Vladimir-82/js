@@ -1,19 +1,14 @@
-import calendar
-import datetime
+import sys
 
 
-def get_all_days(year):
-    res = []
-    for m in range(1, 13):
-        c = calendar.monthcalendar(year, m)
-        for week in c:
-            if week[3]:
-                res.append(datetime.date(day=week[3]+14, month=m, year=year).strftime("%d.%m.%Y"))
-                break
-    return res
+data = [line.strip() for line in sys.stdin]
+
+print('Анри' if (not data.index(data[-1]) % 2 and not int(data[-1]) % 2) or
+      (data.index(data[-1]) % 2 and int(data[-1]) % 2) else 'Дима')
 
 
 
 
 
-print(*get_all_days(int(input())), sep='\n')
+
+
