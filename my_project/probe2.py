@@ -1,10 +1,30 @@
 import sys
+from re import fullmatch
+
+pattern = ' *#.*'
+
+data = [1 for line in sys.stdin if fullmatch(pattern, line.strip())]
 
 
-data = [line.strip() for line in sys.stdin]
+print(data)
+print(sum(data))
 
-print('Анри' if (not data.index(data[-1]) % 2 and not int(data[-1]) % 2) or
-      (data.index(data[-1]) % 2 and int(data[-1]) % 2) else 'Дима')
+
+
+
+# from re import fullmatch
+#
+# pattern = ' *#.*'
+# match1 = fullmatch(pattern, ' #123465465')
+#
+# print(match1)
+
+
+
+
+
+
+
 
 
 
