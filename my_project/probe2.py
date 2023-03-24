@@ -1,18 +1,24 @@
 import csv
 
-with open('salary_data.csv', encoding='utf-8') as file:
-    rows = csv.DictReader(file, delimiter=';')
 
-    salary = {}
-    count = {}
-    for row in rows:
-        salary[row['company_name']] = salary.get(row['company_name'], 0) + int(row['salary'])
-        count[row['company_name']] = count.get(row['company_name'], 0) + 1
+def csv_columns(filename):
+    dc = {}
+    with open(filename, encoding='utf-8') as file:
+        rows = csv.reader(file)
 
-    result = {}
-    for key, val in salary.items():
-        result[key] = val / count[key]
+        print(list(rows)[0])
 
-    [print(i[0]) for i in sorted(result.items(), key=lambda x: x[1])]
 
+        # for row in list(rows)[1:]:
+        #     for num, el in enumerate(row):
+        #         print(num, el)
+
+                # dc.setdefault(list(rows)[0][num], []).append(el)
+                # dc[list(rows)[0][num]] = dc.get(list(rows)[0][num], []).append(el)
+
+
+    return dc
+
+
+print(csv_columns('1.csv'))
 
