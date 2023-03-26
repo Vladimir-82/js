@@ -1,21 +1,22 @@
 import csv
+from datetime import datetime
 
 
+with open('name_log.csv', encoding='utf-8') as file:
+    rows = list(csv.reader(file))
 
-with open('data.csv', encoding='utf-8') as file:
-    rows = csv.reader(file)
-    rows = list(rows)
-    del rows[0]
-    domens = [row[2].split('@')[1] for row in rows]
-    dc = {}
-    for d in (domens):
-        dc[d] = dc.get(d, 0) + 1
-    data = [[key, value] for key, value in sorted(dc.items(), key=lambda x: (x[1], x[0]))]
+    changes = {}
+    for row in rows[1:]:
+        print(row[2])
+        day_change = datetime.strptime(row[2], '%d/%m/%Y %H:%M')
+        changes.setdefault(row[1], []).append(day_change)
 
-with open('domain_usage.csv', 'w', encoding='utf-8', newline='') as f:
+
+with open('new_name_log.csv', 'w', encoding='utf-8', newline='') as f:
     writer = csv.writer(f)
-    writer.writerow(['domain', 'count',])
+    writer.writerow([line for line in rows[0]])
     for row in data:
         writer.writerow(row)
+
 
 
