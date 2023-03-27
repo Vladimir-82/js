@@ -1,2 +1,3 @@
+d = {2:3, 1:89, 4:5, 3:0}
+print((sorted(d.items())))
 
-print(min([233.4, 4.3]))
