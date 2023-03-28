@@ -1,19 +1,42 @@
 import csv
 
 
-def condense_csv(filename, id_name):
-    with open(filename, encoding='utf-8') as file, open('condensed.csv', 'w', encoding='utf-8', newline='') as f:
+def condense_csv():
+    with open('student_counts.csv', encoding='utf-8') as file, \
+            open('sorted_student_counts.csv', 'w', encoding='utf-8', newline='') as f:
         rows = list(csv.reader(file))
-        titles = [id_name]
-        dc = {}
-        for row in rows:
-            dc.setdefault(row[0], []).append(row[-1])
-            if row[1] not in titles:
-                titles.append(row[1])
+
         writer = csv.writer(f)
-        writer.writerow(titles)
-        for key, values in dc.items():
-            writer.writerow([key, *values])
+        classes = rows[0][1:]
+
+        years = [row[0] for row in rows[1:]]
+        print(years)
 
 
-print(condense_csv('1.csv', 'Position'))
+        count = {}
+        for clas in range(len(classes)):
+            for row in rows[1:]:
+                count.setdefault(classes[clas], []).append(row[clas+1])
+
+        print(sorted(count.items()))
+
+
+
+
+        # for key, values in count.items():
+        #     writer.writerow([key, *values])
+
+
+
+
+
+
+
+
+        # writer = csv.writer(f)
+        # writer.writerow(titles)
+        # for key, values in dc.items():
+        #     writer.writerow([key, *values])
+
+
+print(condense_csv())
