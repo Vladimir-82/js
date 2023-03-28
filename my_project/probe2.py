@@ -2,17 +2,18 @@ import csv
 
 
 def condense_csv(filename, id_name):
-    with open(filename, encoding='utf-8') as file:
-        rows = list(csv.reader(file, quotechar='"'))
+    with open(filename, encoding='utf-8') as file, open('condensed.csv', 'w', encoding='utf-8', newline='') as f:
+        rows = list(csv.reader(file))
+        titles = [id_name]
+        dc = {}
         for row in rows:
-            print(row)
+            dc.setdefault(row[0], []).append(row[-1])
+            if row[1] not in titles:
+                titles.append(row[1])
+        writer = csv.writer(f)
+        writer.writerow(titles)
+        for key, values in dc.items():
+            writer.writerow([key, *values])
 
 
-    # with open('new_name_log.csv', 'w', encoding='utf-8', newline='') as f:
-    #     writer = csv.writer(f)
-    #     writer.writerow([line for line in rows[0]])
-    #     for key, values in sorted(changes.items()):
-    #     writer.writerow(values)
-
-
-print(condense_csv('1.csv', 'ID'))
+print(condense_csv('1.csv', 'Position'))
