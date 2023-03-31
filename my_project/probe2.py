@@ -1,12 +1,12 @@
 import json
-import sys
+import csv
 
-line = sys.stdin.read()
-data = json.loads(line)
-for key, value in data.items():
-    if isinstance(value, list):
-        print(key, end=': ')
-        print(*value, sep=',')
-    else:
-        print(key, value, sep=': ')
+with open('playgrounds.csv', encoding='utf-8') as file:
+    rows = csv.DictReader(file, delimiter=';')
+    res = {}
 
+    for row in rows:
+        res.setdefault(row['AdmArea'], {}).setdefault(row['District'], []).append(row['Address'])
+
+with open('addresses.json', 'w') as file:
+    json.dump(res, file)
