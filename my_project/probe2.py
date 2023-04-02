@@ -1,12 +1,11 @@
 import json
-import csv
 
-with open('playgrounds.csv', encoding='utf-8') as file:
-    rows = csv.DictReader(file, delimiter=';')
-    res = {}
 
-    for row in rows:
-        res.setdefault(row['AdmArea'], {}).setdefault(row['District'], []).append(row['Address'])
-
-with open('addresses.json', 'w') as file:
-    json.dump(res, file)
+with open('food_services.json') as file1:
+    data1 = json.load(file1)
+    districts = {}
+    for cort in data1:
+        districts.setdefault(cort["TypeObject"], []).append([cort["Name"], cort["SeatsCount"]])
+    for key, val in sorted(districts.items(), key=lambda y: y[0]):
+        mx = max(val, key=lambda x: int(x[1]))
+        print(key, ', '.join((mx[0], str(mx[1]))), sep=': ')
