@@ -1,10 +1,18 @@
-from collections import namedtuple
-import csv
-import datetime
+from collections import OrderedDict
 
-with open('meetings.csv', encoding='utf-8') as file:
-    rows = csv.DictReader(file)
-    for row in sorted(rows, key=lambda x:
-    (datetime.datetime.strptime(x['meeting_date'], '%d.%m.%Y'),
-     datetime.datetime.strptime(x['meeting_time'], '%H:%M').time())):
-        print(f"{row['surname']} {row['name']}")
+def custom_sort(ordered_dict, by_values=False):
+
+    if by_values:
+        for key, val in sorted(ordered_dict.items(), key=lambda x: x[1]):
+            ordered_dict.move_to_end(key)
+    else:
+        for key in sorted(ordered_dict):
+            ordered_dict.move_to_end(key)
+
+
+
+data = OrderedDict(Dustin=29, Anabel=17, Brian=40, Carol=16)
+custom_sort(data, by_values=True)
+
+
+
