@@ -1,12 +1,8 @@
-import json
-import csv
+from collections import Counter
 
-with open('playgrounds.csv', encoding='utf-8') as file:
-    rows = csv.DictReader(file, delimiter=';')
-    res = {}
 
-    for row in rows:
-        res.setdefault(row['AdmArea'], {}).setdefault(row['District'], []).append(row['Address'])
-
-with open('addresses.json', 'w') as file:
-    json.dump(res, file)
+counter = Counter(input().split(','))
+max_key = max(counter.keys(), key=len)
+for key, val in sorted(counter.items(), key=lambda x: x[0]):
+    cost = sum(map(lambda x: ord(x), [el for el in key if el != ' ']))
+    print(f'{key.ljust(len(max_key))}: {cost} UC x {val} = {cost * val} UC')
