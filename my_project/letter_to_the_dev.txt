@@ -71,7 +71,6 @@ https://github.com/Vladimir-82/LanguageIdentifier
 С использованием библиотеки langdetect, googletrans, gTTS.
 
 
-Возможно ли дистанционно?
 Спасибо.
 
 6. Сервис для изменения размера и формата изображения. Написан на Django.
