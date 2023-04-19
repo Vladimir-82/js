@@ -1,16 +1,7 @@
-from collections import Counter
+try:
+    file = open(input(), 'r', encoding='utf-8')
+    text = file.read()
+    print(text)
 
-
-books = Counter(input().split())
-n = int(input())
-
-res = 0
-for costumer in range(n):
-    book, cost = input().split()
-    if books[book] >= 1:
-
-        books.subtract({book: 1})
-        res += int(cost)
-
-print(res)
-
+except:
+    print('Файл не найден')
