@@ -1,7 +1,14 @@
-try:
-    file = open(input(), 'r', encoding='utf-8')
-    text = file.read()
-    print(text)
+import json
 
-except:
+try:
+    with open(input()) as file1:
+        data1 = json.load(file1)
+        print(data1)
+except FileNotFoundError:
     print('Файл не найден')
+except json.decoder.JSONDecodeError:
+    print('Ошибка при десериализации')
+
+
+
+
