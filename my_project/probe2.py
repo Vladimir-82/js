@@ -1,17 +1,13 @@
-def is_power(n):
-    def rec(pow=0):
-        res = 2 ** pow
-        if res > n:
-            return False
-        if res == n:
-            return True
+def dict_travel(nested_dicts, new_str=''):
+    for k, v in sorted(nested_dicts.items()):
+        if isinstance(v, dict):
+            dict_travel(v, new_str + f'{k}.')
         else:
-            return rec(pow + 1)
+            print(f'{new_str}{k}: {v}')
 
-    return rec()
 
-print(is_power(1111111))
-
+data = {'a': 1, 'b': {'c': 30, 'a': 10, 'b': 20}}
+dict_travel(data)
 
 
 
