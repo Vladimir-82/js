@@ -1,6 +1,14 @@
-def convert(n):
-    z = '-' if n < 0 else ''
-    return z + bin(n).split('b')[-1], z + oct(n).split('o')[-1], z + hex(n).split('x')[-1].upper()
+def zip_longest(*args, fill=None):
+    s = args
+    if not s[0]:
+        return []
+    lenght = len(max(*args, key=len))
+    res = []
+    for el in args:
+        res.append(el + (lenght - len(el)) * [fill])
+    return list(zip(*res))
 
 
-print(convert(-24))
+
+
+print(zip_longest([[]]))

@@ -1,3 +1,4 @@
-s = 'dewewr5'
-d = any((str(i).isdigit() for i in 'dewewr5'))
-print(d)
+a = [1,2]
+b = []
+a.extend(b)
+print(a)
