@@ -1,4 +1,7 @@
-fib = lambda n: 1 if n <= 2 else fib(n - 1) + fib(n - 2)
 
 
-print(fib(3))
+def print_operation_table(operation, rows, cols):
+    [print(*[operation(rows, cols) for cols in range(1, cols+1)]) for rows in range(1, rows+1)]
+
+
+print_operation_table(lambda a, b: a * b, 5, 5)
