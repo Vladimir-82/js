@@ -1,7 +1,13 @@
+def func(x):
+    return x ** 2
 
 
-def print_operation_table(operation, rows, cols):
-    [print(*[operation(rows, cols) for cols in range(1, cols+1)]) for rows in range(1, rows+1)]
+def dec(f):
+    def surogate(arg):
+        print('some text')
+        res = f(arg)
+        return res
+    return surogate
 
 
-print_operation_table(lambda a, b: a * b, 5, 5)
+print(dec(func)(4))
