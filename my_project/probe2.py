@@ -1,13 +1,15 @@
-def func(x):
-    return x ** 2
+new_print = print
 
+def print(*args,**kwargs):
+    res = []
+    for el in args:
+        if isinstance(el, str):
+            res.append(el.upper())
+        else:
+            res.append(el)
+    if kwargs:
+        sep = kwargs['sep']
+        end = kwargs['end']
+    new_print(res)
 
-def dec(f):
-    def surogate(arg):
-        print('some text')
-        res = f(arg)
-        return res
-    return surogate
-
-
-print(dec(func)(4))
+print('bee', 'geek', sep=' and ', end=' wow')
