@@ -1,15 +1,15 @@
-new_print = print
+from collections import defaultdict
 
-def print(*args,**kwargs):
-    res = []
-    for el in args:
-        if isinstance(el, str):
-            res.append(el.upper())
-        else:
-            res.append(el)
-    if kwargs:
-        sep = kwargs['sep']
-        end = kwargs['end']
-    new_print(res)
 
-print('bee', 'geek', sep=' and ', end=' wow')
+
+def remove_marks(text, marks):
+
+    remove_marks.__dict__.setdefault('count', 0)
+    text = ''.join(filter(lambda x: x not in marks, text))
+    remove_marks.count += 1
+    return text
+
+text = 'Hi! Will we go together?'
+
+print(remove_marks(text, '!?'))
+print(remove_marks.count)
