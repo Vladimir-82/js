@@ -1,13 +1,15 @@
 def takes_positive(func):
     def sur(*args, **kwargs):
         try:
-            res = func(*args, **kwargs)
-            len(arg for arg in args if arg > 0) == len(args)
-            return res
-        except Exception(TypeError) as err1:
-            return err1
-        except Exception(ValueError) as err2:
-            return err2
+            if not all(isinstance(arg, int) for arg in args):
+                raise ValueError
+            if all(arg > 0 for arg in args):
+                raise TypeError
+            else:
+                res = func(*args, **kwargs)
+                return res
+        except:
+            print('dsws')
     return sur
 
 
