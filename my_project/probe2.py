@@ -1,21 +1,30 @@
-def takes_positive(func):
-    def sur(*args, **kwargs):
-        lst = [*args, *kwargs.values()]
-        if not all(map(lambda x: isinstance(x, int), lst)):
-            raise TypeError
-        elif not all(map(lambda x: x > 0, lst)):
-            raise ValueError
-        res = func(*args, **kwargs)
-        return res
-    return sur
+from functools import wraps
 
 
-@takes_positive
-def positive_sum(*args):
-    return sum(args)
+def retry(times):
+    def decorator(func):
+        @wraps(func)
+        def surrogate(*args, **kwargs):
+            for i in range(times):
+                try:
+                    func(*args, **kwargs)
+                except Exception:
+                    pass
+                else:
+                    raise Exception('MaxRetriesException')
+            else:
+
+                return func(*args, **kwargs)
+        return surrogate
+    return decorator
+
+
+@retry(3)
+def no_way():
+    raise ValueError
 
 
 try:
-    print(positive_sum(4, 2, 5, 4, 1, 2, 3))
-except Exception as err:
-    print(type(err))
+    no_way()
+except Exception as e:
+    print(type(e))
