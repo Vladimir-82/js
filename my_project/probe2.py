@@ -1,13 +1,11 @@
-def transpose(matrix):
-    l = len(matrix[0])
-    s = len(matrix)
-    res = []
-    for row in matrix:
-        for i in range(l):
-            res.append(matrix[s])
-    print(res)
+def get_min_max(data):
+    if data:
+        return min(enumerate(data), key=lambda x: x[1])[0], \
+           max(enumerate(data), key=lambda x: x[1])[0]
+    return None
 
-matrix = [[1, 2, 3, 4, 5],
-          [6, 7, 8, 9, 10]]
 
-transpose(matrix)
+
+data = []
+
+print(get_min_max(data))
