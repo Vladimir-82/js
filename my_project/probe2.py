@@ -1,11 +1,22 @@
-def get_min_max(data):
-    if data:
-        return min(enumerate(data), key=lambda x: x[1])[0], \
-           max(enumerate(data), key=lambda x: x[1])[0]
-    return None
+from random import choice
+
+
+def random_numbers(left, right):
+    values = list(range(left, right+1))[0]
+    return iter(lambda: values, '')
 
 
 
-data = []
 
-print(get_min_max(data))
+
+
+iterator = random_numbers(1, 10)
+
+print(next(iterator) in range(1, 11))
+print(next(iterator) in range(1, 11))
+print(next(iterator) in range(1, 11))
+
+
+
+
+
