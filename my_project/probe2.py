@@ -1,22 +1,24 @@
-from random import choice
+class Fibonacci:
+
+    def __init__(self):
+        self.a = 1
+        self.b = 1
+        self.start = 1
 
 
-def random_numbers(left, right):
-    values = list(range(left, right+1))[0]
-    return iter(lambda: values, '')
+    def __iter__(self):
+        return self
 
+    def __next__(self):
+        if self.start:
+            return self.start
+        del self.start
+        self.a, self.b = self.b, self.a + self.b
+        return self.a
 
+fibonacci = Fibonacci()
 
-
-
-
-iterator = random_numbers(1, 10)
-
-print(next(iterator) in range(1, 11))
-print(next(iterator) in range(1, 11))
-print(next(iterator) in range(1, 11))
-
-
-
-
-
+print(next(fibonacci))
+print(next(fibonacci))
+print(next(fibonacci))
+print(next(fibonacci))
