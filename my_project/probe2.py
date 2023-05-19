@@ -1,21 +1,20 @@
-class Fibonacci:
+class DictItemsIterator:
 
-    def __init__(self):
-        self.a = 0
-        self.b = 1
+    def __init__(self, data):
+        self.data = data
+
 
 
     def __iter__(self):
         return self
 
     def __next__(self):
+        for key, val in self.data.items():
+            return key, val
 
-        self.a, self.b = self.b, self.a + self.b
-        return self.a
 
-fibonacci = Fibonacci()
+pairs = DictItemsIterator({1: 'A', 2: 'B', 3: 'C'})
 
-print(next(fibonacci))
-print(next(fibonacci))
-print(next(fibonacci))
-print(next(fibonacci))
+print(*pairs)
+
+
