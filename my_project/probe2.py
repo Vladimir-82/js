@@ -1,20 +1,29 @@
-class DictItemsIterator:
+lg = {'en': 'abcdefghijklmnopqrstuvwxyz', 'ru': 'абвгдежзийклмнопрстуфхцчшщъыьэюя'}
 
-    def __init__(self, data):
-        self.data = data
+class Alphabet:
+
+    def __init__(self, language):
+        self.language = language
+        self.iterator = iter(lg[language])
+
+
 
 
 
     def __iter__(self):
         return self
 
+
     def __next__(self):
-        for key, val in self.data.items():
-            return key, val
+        try:
+            return next(self.iterator)
+        except:
+            self.iterator = iter(lg[self.language])
+            return next(self.iterator)
 
 
-pairs = DictItemsIterator({1: 'A', 2: 'B', 3: 'C'})
+en_alpha = Alphabet('en')
 
-print(*pairs)
+letters = [next(en_alpha) for _ in range(28)]
 
-
+print(*letters)
