@@ -45,8 +45,6 @@ Well! My name is Vladimir. I heard a lot about your company and I'm looking forw
 I am looking for a team of Python developers to work together successfully.
 
 What about my life.
-I have a family: two sons and wife.
-I really love my family!
 I like swimming, bicycle and traveling. I read a lot books.
 
 I am a design engineer. I have higher education. Following the university,
@@ -66,14 +64,22 @@ I’d say. To date, I reached some progress in web development.
 Over the past year, I have written several projects on the Django framework and Django REST.
 
 Now I will tell you about my most achievements in web development.
-1. I developed a project Weather service. This application allows you to get weather information
+
+1. I developed and deployed a project Weather service. This application allows you to get weather information
 for cities as you wish. This is a very user-friendly interface based on the API of a american
 weather company.
-2. I also developed news-service. The application allows you to track, add, update news.
+After authorisation you can have your oun page with the list of cities.
+I used django and jQuery for create this application.
+2. I created and deployed an application for detected, translated and speak text information.
+You can input your unknown text into the input field and language.
+The language of the text will be available at the output. And also you will also have a text translation into
+the language you specified.
+And of course you can listen to the text in these languages.
+I used several external libraries for my work. (TTS, google translate and Langdetected).
+
+3. I also developed blog-service. The application allows you to track, add, update news.
 The application uses the Django REST and API.
-3. And I developed Telegram bot. The bot returns the first paragraph from
-wikipedia at the request of the client.
-And others.
+
 
 
 I learn something new every day about Python, Django or SQL.
