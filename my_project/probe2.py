@@ -1,29 +1,22 @@
-lg = {'en': 'abcdefghijklmnopqrstuvwxyz', 'ru': 'абвгдежзийклмнопрстуфхцчшщъыьэюя'}
-
-class Alphabet:
-
-    def __init__(self, language):
-        self.language = language
-        self.iterator = iter(lg[language])
+from datetime import timedelta, date
 
 
+def dates(start, count=None):
+    counter = 0
+    while True:
+        yield start
+        counter += 1
+        start += timedelta(days=1)
+        if count is not None:
+            if counter == count:
+                return
+
+generator = dates(date(2022, 3, 8))
+
+print(next(generator))
+print(next(generator))
+print(next(generator))
 
 
 
-    def __iter__(self):
-        return self
 
-
-    def __next__(self):
-        try:
-            return next(self.iterator)
-        except:
-            self.iterator = iter(lg[self.language])
-            return next(self.iterator)
-
-
-en_alpha = Alphabet('en')
-
-letters = [next(en_alpha) for _ in range(28)]
-
-print(*letters)
