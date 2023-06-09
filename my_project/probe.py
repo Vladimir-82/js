@@ -1,4 +1,2 @@
-a = {1,2,3}
-b = {2}
-
-print(b.issubset(a))
+a = [13, 20, 41, 2, 2, 5]
+print('1212'.split())

@@ -1,7 +1,8 @@
-def is_prime(number):
-    if number == 1:
-        return False
-    return all(bool(number % i) for i in range(2, number))
+from itertools import chain
 
 
-print(is_prime(114))
+def sum_of_digits(iterable):
+    return sum(map(int, map(str, iterable)))
+
+
+print(sum_of_digits([13, 20, 41, 2, 2, 5]))
