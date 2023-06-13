@@ -1,8 +1,6 @@
-from itertools import chain
+from itertools import permutations
 
 
-def sum_of_digits(iterable):
-    return sum(map(int, map(str, iterable)))
-
-
-print(sum_of_digits([13, 20, 41, 2, 2, 5]))
+res = list(input())
+r = sorted(set(permutations(res, len(res))))
+[print(*i, sep='') for i in r]

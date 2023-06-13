@@ -1,2 +1,5 @@
-a = [13, 20, 41, 2, 2, 5]
-print('1212'.split())
+from itertools import zip_longest
+
+
+a = iter([1, 2, 3])
+print(*zip_longest (a, a))
